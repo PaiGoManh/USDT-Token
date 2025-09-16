@@ -5,7 +5,7 @@ describe("USDT Token", function () {
   let USDT, usdt, owner, addr1;
 
   beforeEach(async function () {
-    const USDT = await ethers.getContractFactory("USDT");
+    USDT = await ethers.getContractFactory("USDT");
     [owner, addr1] = await ethers.getSigners();
 
     console.log("Deploying USDT contract...");

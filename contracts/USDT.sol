@@ -8,5 +8,8 @@ contract USDT is ERC20, Ownable {
     constructor() ERC20("MyToken", "USDT") Ownable(msg.sender) {
         _mint(msg.sender, 100_000_000_000 * 10**18);
     }
-}
 
+    function mint(address to, uint256 amount) external onlyOwner {
+        _mint(to, amount);
+    }
+}
