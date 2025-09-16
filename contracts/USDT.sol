@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract USDT is ERC20, Ownable {
-    constructor() ERC20("MyToken", "USDT") Ownable(msg.sender) {
-        _mint(msg.sender, 100_000_000_000 * 10**18);
+    constructor(address initialHolder) ERC20("USDT", "USDT") Ownable(msg.sender) {
+        _mint(initialHolder, 100_000_000_000 * 10**18);
     }
 
     function mint(address to, uint256 amount) external onlyOwner {
